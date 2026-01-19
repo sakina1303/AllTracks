@@ -72,3 +72,5 @@ junit.xml
 
 # Ignore package-lock
 package-lock.json
+
+venv    
