@@ -1,0 +1,74 @@
+# Node modules
+node_modules/
+
+# Dependency directories
+.forge/
+.expo/
+.expo-shared/
+
+# Build outputs
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Model files
+*.h5
+
+# Misc
+*.log
+coverage/
+
+# Expo
+web-build/
+
+# React Native
+android/
+ios/
+
+# VS Code
+.history/
+
+# Mac
+Icon?
+
+# Images
+assets/*.png
+assets/*.jpg
+assets/*.jpeg
+assets/*.gif
+assets/*.svg
+
+# Ignore local database
+*.db
+*.sqlite3
+
+# Ignore test output
+junit.xml
+
+# Ignore package-lock
+package-lock.json
