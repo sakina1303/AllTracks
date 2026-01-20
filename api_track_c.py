@@ -47,9 +47,7 @@ async def load_model():
     global model
     try:
         print(f"Loading model from {MODEL_PATH}...")
-        # Load with TF 2.13 compatibility
-        import keras
-        model = keras.models.load_model(MODEL_PATH, compile=False)
+        model = tf.keras.models.load_model(MODEL_PATH, compile=False)
         print("✓ Model loaded successfully")
     except Exception as e:
         print(f"❌ Error loading model: {e}")

@@ -1,0 +1,10 @@
+# Track D - Liveness Detection Requirements
+
+# Core dependencies
+opencv-python==4.8.1.78    # Computer vision and image processing
+numpy==1.24.3              # Numerical operations
+mediapipe==0.10.9          # Hand/finger detection
+websockets==12.0           # WebSocket server/client for API
+
+# Optional (for better performance)
+opencv-contrib-python==4.8.1.78  # Additional OpenCV features (optional)

@@ -1,0 +1,30 @@
+[Unit]
+Description=TRACK D Liveness Detection WebSocket Server
+After=network.target
+Documentation=https://github.com/abhimanyu86/TRACK_D
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/opt/trackd
+Environment="PATH=/opt/trackd/venv/bin"
+ExecStart=/opt/trackd/venv/bin/python3 /opt/trackd/server_cloud.py
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=append:/var/log/trackd/server.log
+StandardError=append:/var/log/trackd/error.log
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Resource limits (optional)
+# LimitNOFILE=65536
+# MemoryMax=2G
+
+[Install]
+WantedBy=multi-user.target

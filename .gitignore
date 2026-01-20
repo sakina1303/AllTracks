@@ -74,3 +74,5 @@ junit.xml
 package-lock.json
 
 venv/
+fastapi-env/
+DEPLOY_INSTRUCTIONS.md

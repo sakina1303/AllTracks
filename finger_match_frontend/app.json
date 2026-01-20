@@ -7,10 +7,22 @@
     "sdkVersion": "54.0.0",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fingermatch.frontend",
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      }
     },
     "android": {
-      "package": "com.fingermatch.frontend"
+      "package": "com.fingermatch.frontend",
+      "usesCleartextTraffic": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2f7d488e-ab4e-4c1a-bbf7-a234d3d855eb"
+      }
     }
   }
 }
