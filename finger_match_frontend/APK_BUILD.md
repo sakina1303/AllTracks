@@ -13,7 +13,7 @@ npm install
 ```
 
 ### 2) Ensure Android allows HTTP (already configured)
-This project uses an HTTP backend URL (`http://34.44.114.58:8000/...`), so Android must allow cleartext traffic.
+This project uses an HTTPS backend URL (`https://finger-match-backend.onrender.com`), so it is secure.
 
 This is already set in `app.json`:
 - `expo.android.usesCleartextTraffic = true`

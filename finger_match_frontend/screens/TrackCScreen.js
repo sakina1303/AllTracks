@@ -5,7 +5,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 
 // Deployed Track C API (base64 JSON)
-const BACKEND_URL = 'http://34.44.114.58:8000/api/match';
+const BACKEND_URL = 'https://finger-match-backend.onrender.com/track-c/api/match';
 
 const PROCESSING_STEPS = [
     'Uploading images to server...',
@@ -132,7 +132,7 @@ export default function TrackCScreen() {
         if (!healthy) {
             Alert.alert(
                 'Server Unreachable',
-                `Cannot connect to backend at ${BACKEND_URL}\n\nPlease check:\n• Track C API is running\n• Device has internet access\n• IP address 34.44.114.58 and port 8000 are reachable`
+                `Cannot connect to backend at ${BACKEND_URL}\n\nPlease check:\n• Backend is running (Render)\n• Device has internet access`
             );
             return;
         }
@@ -187,7 +187,7 @@ export default function TrackCScreen() {
                     `Common fixes:\n` +
                     `• Ensure phone has internet access\n` +
                     `• If Android blocks HTTP, enable cleartext traffic (already set in app.json) and rebuild the app\n` +
-                    `• Open http://34.44.114.58:8000/health in your phone browser and confirm it loads\n` +
+                    `• Open ${BACKEND_URL.replace('/api/match', '')} in your browser to verify status\n` +
                     `• Check firewall / cloud security group allows port 8000`;
             }
             

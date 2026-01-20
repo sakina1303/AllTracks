@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 // Gallery-based liveness removed (camera-only)
 
-const BACKEND_URL = 'http://192.168.139.152:8001/api/liveness_check';
+const BACKEND_URL = 'https://finger-match-backend.onrender.com/track-d/api/liveness_check';
 
 export default function TrackDScreen() {
     const [loading, setLoading] = useState(false);
@@ -91,7 +91,7 @@ export default function TrackDScreen() {
         if (!healthy) {
             Alert.alert(
                 'Server Unreachable', 
-                `Backend not responding at ${BACKEND_URL}.\n\nPlease ensure:\n• Backend server is running on port 8001\n• Your device is on the same WiFi network\n• IP address 192.168.139.152 is correct`
+                `Backend not responding at ${BACKEND_URL}.\n\nPlease ensure:\n• Device has internet\n• Backend server is running (Render)`
             );
             return;
         }
@@ -169,7 +169,7 @@ export default function TrackDScreen() {
             if (e.name === 'AbortError') {
                 errorMsg = 'Request timed out after 30 seconds.\n\nThe backend may be processing slowly or unreachable.';
             } else if (e.message.includes('Network request failed')) {
-                errorMsg = `Network Error: Cannot reach backend.\n\nBackend URL: ${BACKEND_URL}\n\nCheck:\n• Backend is running on port 8001\n• Device is on WiFi (192.168.139.x)\n• Firewall allows port 8001`;
+                errorMsg = `Network Error: Cannot reach backend.\n\nBackend URL: ${BACKEND_URL}\n\nCheck:\n• Device has internet access\n• Backend service (Render) is active`;
             }
             
             setResult(errorMsg);
