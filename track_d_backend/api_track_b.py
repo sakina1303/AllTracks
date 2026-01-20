@@ -211,4 +211,6 @@ if __name__ == "__main__":
     print("  POST /api/liveness_check - Liveness detection")
     print("\nAPI Docs: http://localhost:8001/docs")
     print("=" * 80)
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    import os
+    port = int(os.environ.get("PORT", 8001))
+    uvicorn.run(app, host="0.0.0.0", port=port)
